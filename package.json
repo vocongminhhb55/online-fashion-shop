@@ -1,0 +1,39 @@
+{
+  "name": "hello-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www",
+    "bootstrap.min": "node-sass public/scss/bootstrap.min.scss public/css/bootstrap.min.css",
+    "elegant-icons": "node-sass public/scss/elegant-icons.scss public/css/elegant-icons.css",
+    "font-awesome.min": "node-sass public/scss/font-awesome.min.scss public/css/font-awesome.min.css",
+    "magnific-popup": "node-sass public/scss/magnific-popup.scss public/css/magnific-popup.css",
+    "nice-select": "node-sass public/scss/nice-select.scss public/css/nice-select.css",
+    "owl.carousel.min": "node-sass public/scss/owl.carousel.min.scss public/css/owl.carousel.min.css",
+    "slicknav.min": "node-sass public/scss/slicknav.min.scss public/css/slicknav.min.css",
+    "style": "node-sass public/scss/style.scss public/css/style.css"
+  },
+  "dependencies": {
+    "ajv": "^8.11.2",
+    "ajv-formats": "^2.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
