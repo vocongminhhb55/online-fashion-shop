@@ -10,6 +10,7 @@ const homePageRouter = require('./routes/home-page-route.js');
 const authRouter = require('./components/auth');
 const passport = require('./components/auth/passport');
 const adminRouter = require('./routes/admin')
+const cartRouter= require('./routes/cart_route');
 const db = require('./db');
 
 const app = express();
@@ -70,6 +71,7 @@ app.use('/admin', adminRouter);
 app.use('/home-page/shop', productRouter);
 app.use('/home-page', homePageRouter);
 app.use('/auth', authRouter);
+app.use('/cart', cartRouter);
 // app.use('/shop', productRouter);
 // catch 404 and forward to error handler
 app.use(function(req,
