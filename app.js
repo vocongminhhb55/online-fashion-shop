@@ -68,7 +68,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use('/admin', adminRouter);
-app.use('/home-page/shop', productRouter);
+//app.use('/home-page/shop', productRouter);
 app.use('/home-page', homePageRouter);
 app.use('/auth', authRouter);
 app.use('/cart', cartRouter);
