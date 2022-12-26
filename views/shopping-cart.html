@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/noti.css" type="text/css">
+
+</head>
+
+<body onload="calculate_total_eachprod()">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="./shop.html">Shop</a></li>
+                            <li><a href="./faqs.html">FAQs</a></li>
+                            <!-- <li><a href="./contact.html">Contact</a></li> -->
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <!-- <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a> -->
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""></a>
+                        <a href="#", style="color:inherit"><b>Hello, username</b></a>
+                        
+                        <!-- <a src="img/icon/search.png" alt=""></a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Shopping Cart</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html">Home</a>
+                            <a href="./shop.html">Shop</a>
+                            <span>Shopping Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Name</th>
+                                    <th>Product Price</th>
+                                    <th>Number</th>
+                                    <th>Total</th>
+                                    <th>Order</th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="table">
+                                <tr name="list-products">
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src="img/shopping-cart/cart-1.jpg" width="90" height="80" alt="">
+                                        </div>
+                                    </td>
+                                        
+                                    <td class="product__cart__item">
+
+                                            <h6>T-shirt 2</h6>
+
+                                    </td>
+                                    <td class="cart__price">
+                                        $ <h5 style="text-decoration: line-through; display: inline">
+                                            30.00
+                                        </h5>
+                                        <br>
+                                        $ <h5 style="color: red; display: inline" name="pprice">
+                                            30.00
+                                        </h5>
+                                    </td>
+
+                                    <td class="quantity__item">
+                                        <h6 name="quan">2</h6>
+
+                                    </td>
+                                    <td class="cart__price" >$<h5 style="display: inline" name="total">0.0</h5></td>
+                                    <td class="cart__price">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="check" name="check" onclick="update_cart_total()">
+                                            <label class="form-check-label" for="check" name="check">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="cart__close" onclick="removeThatBlock(this); update_cart_total()"><i class="fa fa-close"></i></td>
+                                    
+                                </tr>
+                                <tr name="list-products">
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src="img/shopping-cart/cart-1.jpg" width="80" height="80" alt="">
+                                        </div>
+                                    </td>
+                                        
+                                    <td class="product__cart__item">
+
+                                        <h6>T-shirt </h6>
+
+                                    </td>
+                                    <td class="cart__price">
+                                        $ <h5 style="text-decoration: line-through; display: inline">
+                                            30.00
+                                        </h5>
+                                        <br>
+                                        $ <h5 style="color: red; display: inline" name="pprice">
+                                            13.41
+                                        </h5>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <h6 name="quan">2</h6>
+
+                                    </td>
+                                    <td class="cart__price" >$<h5 style="display: inline" name="total">0.0</h5></td>
+                                    <td class="cart__price">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="check" name="check" onclick="update_cart_total()">
+                                            <label class="form-check-label" for="check">
+                                              
+                                            </label>
+                                          </div>
+                                    </td>
+                                    <td class="cart__close" onclick="removeThatBlock(this); update_cart_total()"><i class="fa fa-close"></i></td>
+                                    
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Discount codes</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Coupon code">
+                            <button type="submit" href="javascript:void(0);"  onclick="Noti({
+                                status: 'success',
+                                content: 'Success message without animation',
+                                timer: 5000,
+                                animation: false,
+                                progress: true
+                            });">
+                            Apply</button>
+                        </form>
+                    </div>
+                    <div class="cart__total">
+                        <h6>Cart total</h6>
+                        <ul>
+                            <!-- <li>Original subtotal <h7 style="float: right; text-decoration: line-through">$ 169.50</h7></li> -->
+                            <li>Subtotal <span id="subtotal">$ 0.0</span></li>
+                            <li>VAT <span id="vat">$ 0.0</span></li>
+                            <li>Total <span id="total_all">$ 0.0</span></li>
+                        </ul>
+                        <a class="primary-btn" href="checkout_next.html" onclick="calculate_total_eachprod()">Proceed to checkout</a>
+                        <!-- <a href="" class="primary-btn">Proceed to checkout</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="index.html"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">New Arrivals</a></li>
+                            <li><a href="#">Trending</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Information</h6>
+                        <ul>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <h5 style="color: white "> Contact us: admin@g2shop.com </h5>
+                    <h5 style="color: white "> Phone: +84 0123013122  </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/noti.js"></script>
+
+    <script>
+        function removeThatBlock(element) {
+            // element = document.getElementById(id)
+            target = element.parentNode.closest('tr[name=list-products]')
+            // list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
+            // list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
+
+            target.remove();
+
+        }
+        function calculate_total_eachprod(){
+
+
+            // list_prods = document.getElementsByName('list-products');
+
+            list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
+            list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
+            list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
+
+            for (i = 0; i < list_prods.length; i++) {
+                list_totals[i].innerText = Number(list_prods[i].innerText) * Number(list_quans[i].innerText)
+
+            }
+        
+        }
+        function calculate_total(){
+            subtotal = 0
+            vat = 0.08 * subtotal 
+            total = subtotal + vat
+            return total
+        }
+
+        function update_cart_total(){
+            list_check = document.querySelectorAll("tr[name=list-products] input[name='check']")
+            list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
+            cart_total = 0 
+            for (i = 0; i < list_check.length; i++){
+                if (list_check[i].checked){
+                    cart_total += Number(list_totals[i].innerText)
+                }
+            }
+            vat = 0.08 * cart_total
+            total = cart_total + vat 
+
+            subtotal_tmp = cart_total.toFixed(1)
+            vat_tmp = vat.toFixed(1)
+            total_all_tmp = total.toFixed(1)
+
+
+            document.getElementById("subtotal").innerText = "$ " + subtotal_tmp
+            document.getElementById("vat").innerText = "$ " + vat_tmp
+            document.getElementById("total_all").innerText = "$ " + total_all_tmp
+
+        }
+    </script>
+</body>
+
+</html>
