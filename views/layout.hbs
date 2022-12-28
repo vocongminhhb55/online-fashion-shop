@@ -37,8 +37,8 @@
         <div class="offcanvas__option">
         </div>
         <div class="offcanvas__nav__option">
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="/cart"><img src="img/icon/cart.png" alt=""></a>
+            <a href="#"><img src="../../img/icon/heart.png" alt=""></a>
+            <a href="/home-page/shop/shopping-cart"><img src="../../img/icon/cart.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>
@@ -50,25 +50,34 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="/home-page"><img src="img/logo.png" alt=""></a>
+                        <a href="/home-page"><img src="../../img/logo.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-5 col-md-5">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="/home-page">Home</a></li>
+                            <li><a href="/home-page">Home</a></li>
                             <li><a href="/home-page/shop">Shop</a></li>
                             <li><a href="/home-page/faqs">FAQs</a></li>
                             <!-- <li><a href="./contact.html">Contact</a></li> -->
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-4 col-md-4">
                     <div class="header__nav__option">
                         <!-- <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a> -->
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="/cart"><img src="img/icon/cart.png" alt=""></a>
-                        <a href="#" , style="color:inherit"><b>Hello, username</b></a>
+                        <a href="#"><img src="../../img/icon/heart.png" alt=""></a>
+                        <a href="/home-page/shop/shopping-cart"><img src="../../img/icon/cart.png" alt=""></a>
+                        {{#if user}}
+                        <a href="#"  style="color:inherit"><b>Hello,
+                                {{user.name}}</b></a>
+                        <a href="/auth/logout"  style="color:inherit">Logout</a>
+
+                        {{else}}
+                        <a href="/auth/login"  style="color:inherit"><b>Login</b></a>
+                        <a href="/auth/register"  style="color:inherit"><b>Register</b></a>
+                        {{/if}}
+
 
                         <!-- <a src="img/icon/search.png" alt=""></a> -->
                     </div>
@@ -89,7 +98,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="index.html"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="index.html"><img src="../../img/footer-logo.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -195,27 +204,27 @@
             target.remove();
 
         }
-        function calculate_total_eachprod() {
+        //function calculate_total_eachprod() {
 
 
             // list_prods = document.getElementsByName('list-products');
 
-            list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
-            list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
-            list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
+            //list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
+            //list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
+            //list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
 
-            for (i = 0; i < list_prods.length; i++) {
-                list_totals[i].innerText = Number(list_prods[i].innerText) * Number(list_quans[i].innerText)
+            //for (i = 0; i < list_prods.length; i++) {
+              //  list_totals[i].innerText = Number(list_prods[i].innerText) * Number(list_quans[i].innerText)
 
-            }
+            //}
 
-        }
-        function calculate_total() {
-            subtotal = 0
-            vat = 0.08 * subtotal
-            total = subtotal + vat
-            return total
-        }
+        //}
+        //function calculate_total() {
+          //  subtotal = 0
+         //   vat = 0.08 * subtotal
+        //    total = subtotal + vat
+        //    return total
+       // }
 
         function update_cart_total() {
             list_check = document.querySelectorAll("tr[name=list-products] input[name='check']")

@@ -8,7 +8,7 @@ const db = {connection: null};
   db.connection = await mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'customer_products',
+    database: 'online_shopping',
     password: 'T!nInvisible123'
   });
   console.log('Database connected!');

@@ -19,48 +19,31 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big.png">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{product.img_thumb_1}}">
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-2.png">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{product.img_thumb_2}}">
                                 </div>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-3.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-3.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-3.png">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{product.img_thumb_3}}">
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-4.png">
+                                <div class="product__thumb__pic set-bg" data-setbg="{{product.img_thumb_4}}">
                                     <i class="fa fa-play"></i>
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/product-big-4.png">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                            </a>
-                        </li>
+
 
                     </ul>
                 </div>
@@ -68,22 +51,22 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="img/shop-details/product-big-2.png" alt="">
+                                <img src="{{product.img_main_1}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="img/shop-details/product-big-3.png" alt="">
+                                <img src="{{product.img_main_1}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="img/shop-details/product-big.png" alt="">
+                                <img src="{{product.img_main_1}}" alt="">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-4" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="img/shop-details/product-big-4.png" alt="">
+                                <img src="{{product.img_main_1}}" alt="">
                                 <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1"
                                     class="video-popup"><i class="fa fa-play"></i></a>
                             </div>
@@ -101,20 +84,15 @@
                         <div class="product__details__last__option">
                             <!-- <h5><span>Guaranteed Safe Checkout</span></h5>
                                 <img src="img/shop-details/details-payment.png" alt=""> -->
-                            <ul>
-                                <li><span>SKU:</span> 3812912</li>
-                                <li><span>Categories:</span> Clothes</li>
-                                <li><span>Tag:</span> Clothes, Skin, Body</li>
-                            </ul>
                         </div>
-                        <h3>Hooded thermal anorak</h3>
+                        <h3>Name: {{product.name}}</h3>
 
-                        <h3 style="color:red">$270.00 <span>70.00</span></h3>
+                        <h3>Price: ${{product.price}}</h3>
                         <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                             cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                             with placket.</p>
                         <div class="product__details__option">
-                            <p>Remains: 10</p>
+                            <p>Remains: {{product.quantity}}</p>
 
                             <div class="product__details__option__size">
                                 <span>Size:</span>
