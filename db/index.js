@@ -1,7 +1,7 @@
 // get the client
 const mysql = require('mysql2/promise');
 
-const db = {connection: null};
+const db = { connection: null };
 
 (async () => {
   // create the connection to database
