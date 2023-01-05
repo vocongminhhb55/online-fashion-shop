@@ -8,10 +8,16 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, async function verify
     return cb(null, user);
   return cb(null, false);
 }));
+passport.use('admin-local', new LocalStrategy({ usernameField: 'email' }, async function verify(username, password, cb) {
+  const user = await authService.checkUserCredential_admin(username, password);
 
+  if (user)
+    return cb(null, user);
+  return cb(null, false);
+}));
 passport.serializeUser(function(user, cb) {
   process.nextTick(function() {
-    cb(null, { id: user.id, name: user.name, email: user.email });
+    cb(null, { id: user.id, name: user.name, email: user.username });
   });
 });
 

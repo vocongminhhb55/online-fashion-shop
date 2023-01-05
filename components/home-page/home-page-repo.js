@@ -13,3 +13,6 @@ exports.get = async (id) => {
     const result = await db.connection.execute("SELECT * FROM users where id = ?", [id]);
     return result[0][0];
 }
+exports.insertOrderDetail = async (firstName, lastName,  Country, Address,  Apartment, townCity,state, postCode, Phone, Email, price) => {
+    await db.connection.execute('insert into order_details (firstName, lastName, country,address, apartment,city, state, zip,phone,email,total) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)', [firstName, lastName, Country, Address,Apartment, townCity, state, postCode, Phone, Email, price]);
+}

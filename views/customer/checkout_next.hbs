@@ -23,7 +23,7 @@
 <section class="checkout spad">
     <div class="container">
         <div class="checkout__form">
-            <form action="#">
+            <form method="post">
                 <div class="row">
                     <!-- <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
@@ -33,24 +33,16 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="checkout__order" style="margin: 0 auto">
                             <h4 class="order__title">Your order</h4>
-                            <h5 style="font-weight: bold;">Product information</h5>
 
-                            <div class="checkout__order__products">Product <span>Total</span></div>
-                            <ul class="checkout__total__products">
-                                <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                <li>02. German chocolate <span>$ 170.0</span></li>
-                                <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
-                            </ul>
+
                             <h5 style="font-weight: bold;">User information</h5>
                             <ul class="checkout__total__products">
-                                <li>Name <span>Nguyen Van A</span></li>
-                                <li>Address<span>227 Nguyen Van Cu street, Distric 5, Ho Chi Minh City</span></li>
-                                <li>Phone number<span>+84 825438172</span></li>
-                                <li>Payment Method<span>VISA 12********31 </span> </li>
+                                <li>Name <span>{{name}}</span></li>
+                                <li>Address<span>{{order.address}}</span></li>
+                                <li>Phone number<span>+{{order.phone}}</span></li>
                             </ul>
                             <ul class="checkout__total__all">
-                                <li>Total <span>$750.99</span></li>
+                                <li>Total <span>{{order.total}}</span></li>
                             </ul>
                             <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">

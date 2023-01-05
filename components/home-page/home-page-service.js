@@ -11,3 +11,7 @@ exports.change_gender = (name, id) => {
     return home_page_Repository.change_gender(name, id);
 }
 exports.getID = (id) => home_page_Repository.get(id);
+
+exports.inputOrder = (firstName, lastName, Country, Address,Apartment, townCity, state, postCode, Phone, Email, price) => {
+    return home_page_Repository.insertOrderDetail(firstName, lastName, Country, Address,Apartment, townCity, state, postCode, Phone, Email, price);
+}

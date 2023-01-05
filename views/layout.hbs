@@ -196,35 +196,35 @@
 
         }
         function removeThatBlock(element) {
-            // element = document.getElementById(id)
+            element = document.getElementById(id)
             target = element.parentNode.closest('tr[name=list-products]')
-            // list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
-            // list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
+            list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
+            list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
 
             target.remove();
 
         }
-        //function calculate_total_eachprod() {
+        function calculate_total_eachprod() {
 
 
-            // list_prods = document.getElementsByName('list-products');
+             list_prods = document.getElementsByName('list-products');
 
-            //list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
-            //list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
-            //list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
+            list_prods = document.querySelectorAll("tr[name=list-products] h5[name='pprice']")
+            list_quans = document.querySelectorAll("tr[name=list-products] h6[name='quan']")
+            list_totals = document.querySelectorAll("tr[name=list-products] h5[name='total']")
 
-            //for (i = 0; i < list_prods.length; i++) {
-              //  list_totals[i].innerText = Number(list_prods[i].innerText) * Number(list_quans[i].innerText)
+            for (i = 0; i < list_prods.length; i++) {
+                list_totals[i].innerText = Number(list_prods[i].innerText) * Number(list_quans[i].innerText)
 
-            //}
+            }
 
-        //}
-        //function calculate_total() {
-          //  subtotal = 0
-         //   vat = 0.08 * subtotal
-        //    total = subtotal + vat
-        //    return total
-       // }
+        }
+        function calculate_total() {
+           subtotal = 0
+           vat = 0.08 * subtotal
+            total = subtotal + vat
+            return total
+        }
 
         function update_cart_total() {
             list_check = document.querySelectorAll("tr[name=list-products] input[name='check']")

@@ -25,3 +25,10 @@ exports.checkUserCredential = async (email, password) => {
     return user;
   return null;
 }
+exports.checkUserCredential_admin = async (email, password) => {
+  const user = await authRepository.getUserByEmail_admin(email);
+  if (!user) return null;
+  if (await bcrypt.compare(password, user.password))
+    return user;
+  return null;
+}
