@@ -14,7 +14,10 @@ exports.add = (req, res) => {
 };
 
 exports.cartDetail = async (req, res) => {
+  if (!req.session.cart || req.session.cart.length === 0) {
+    res.render('customer/shopping-cart', { error: 'Your cart is empty' });
+    return;
+  }
   let list_products = await cartService.cartDetails(req.session.cart);
-  console.log(list_products);
-  res.render('customer/shopping-cart', {list_products});
+  res.render('customer/shopping-cart', { list_products });
 }

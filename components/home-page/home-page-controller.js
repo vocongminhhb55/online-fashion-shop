@@ -4,6 +4,15 @@ const qs = require('qs');
 exports.link_to = (req, res) => {
     res.render('customer/' + req.params.slug);
 }
+exports.getCheckOut = (req, res) => {
+    res.render('customer/checkout');
+}
+exports.confirmCheckOut = (req,res)=> {
+    
+}
+exports.getCheckOut_Next = (req,res) => {
+    
+}
 exports.getHomePage = (req, res) => {
     res.render('customer/index');
 }
