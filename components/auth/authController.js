@@ -18,6 +18,10 @@ exports.register = async (req, res) => {
     return;
   }
   const { 'full-name': fullName, email, password, tac } = req.body;
+  if(email && email.includes("admin.")){
+    res.render('auth/register', { error: 'Try to avoid special character',layout:'layout_admin.hbs' });
+    return;
+  }
   try {
     await authService.register(fullName, email, password, tac);
   } catch (e) {

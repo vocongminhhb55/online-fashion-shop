@@ -9,6 +9,10 @@ exports.link_to = (req, res) => {
     res.render('customer/' + req.params.slug);
 }
 exports.getCheckOut = (req, res) => {
+    if (!req.session.cart) {
+        res.redirect('/home-page/shop/shopping-cart');
+        return;
+    }
     res.render('customer/checkout');
 }
 exports.confirmCheckOut = async (req,res)=> {
@@ -20,11 +24,14 @@ exports.confirmCheckOut = async (req,res)=> {
             return;
         }
         let Price = 0;
+        let Vat = 0;
         for (let i = 0; i < list_products.products.length; i++) {
             Price += list_products.products[i].price;
+            Vat += list_products.products[i].Vat;
         }
+        const total = Price + Vat;
         if(!req.session.order) {
-            req.session.order = {fName: fName, lName: lName, contry:contry, address: address, apartment: apartment, city: city, state:state, zip: zip, phone: phone, email:email, total: Price};
+            req.session.order = {fName: fName, lName: lName, contry:contry, address: address, apartment: apartment, city: city, state:state, zip: zip, phone: phone, email:email, total: total};
         }
         res.redirect('/home-page/checkout/confirm');
         return;
@@ -32,19 +39,12 @@ exports.confirmCheckOut = async (req,res)=> {
     res.redirect('/home-page/checkout');
 }
 exports.getCheckOut_Next = (req,res) => {
-    // state:state, zip: zip, phone: phone, email:email, total: Price
+    if (!req.session.cart) {
+        res.redirect('/home-page/shop/shopping-cart');
+        return;
+    }
     const order = req.session.order;
     const name = order.lName + " " + order.fName;
-    // const fName = order.fName;
-    // const lName = order.lName;
-    // const address = order.address;
-    // const apartment = order.apartment;
-    // const city = order.city;
-    // const state = order.state;
-    // const zip = order.zip;
-    // const phone = order.phone;
-    // const email = order.email;
-    // const price = order.price;
     res.render('customer/checkout_next',{order,name});
 }
 exports.confirmOrder = async (req,res) => {
@@ -60,8 +60,9 @@ exports.confirmOrder = async (req,res) => {
     const phone = order.phone;
     const email = order.email;
     const price = order.total;
+    const name = order.lName + " " + order.fName;
     await service.inputOrder(fName,lName, country, address,apartment,city,state,zip,phone,email,price);
-    res.render('customer/checkout_next',{order, notice:'Complete'});
+    res.render('customer/checkout_next',{order, name, notice:'Complete'});
 }
 
 exports.getHomePage = (req, res) => {

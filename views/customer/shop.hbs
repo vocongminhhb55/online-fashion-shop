@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form method ="get">
+                            <form method="get">
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
@@ -56,9 +56,12 @@
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
                                                     <li><input type="submit" class="btn btn-light" value="all"></li>
-                                                    <li><input type="submit" class="btn btn-light" name="category" value="men"></li>
-                                                    <li><input type="submit" class="btn btn-light" name="category" value="women"></li>
-                                                    <li><input type="submit" class="btn btn-light" name="category" value="kids"></li>
+                                                    <li><input type="submit" class="btn btn-light" name="category"
+                                                            value="men"></li>
+                                                    <li><input type="submit" class="btn btn-light" name="category"
+                                                            value="women"></li>
+                                                    <li><input type="submit" class="btn btn-light" name="category"
+                                                            value="kids"></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -73,7 +76,7 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__tags">
                                                 <a href="?category={{category}}&tag=clothing">Clothing</a>
-                                                <a href="?category={{category}}&tag=bags">Bags</a>
+                                                <a href="?category={{category}}&tag=bag">Bags</a>
                                                 <a href="?category={{category}}&tag=shoes">Shoes</a>
                                                 <a href="?category={{category}}&tag=accessories">Accessories</a>
                                             </div>
@@ -103,18 +106,14 @@
                             </div>
                             <div class="product__item__text">
                                 <h6 id="name_product">{{name}}</h6>
-                                 <form method="post">
+                                <form method="post">
                                     <button type="submit" class="btn btn-light" name="productId" value="{{id}}">+ Add
                                         To Cart</a>
                                 </form>
                                 <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+                                    <h5 style="display: inline">${{price}}</h5>
                                 </div>
-                                <h5 style="display: inline">${{price}}</h5>
+
                             </div>
                         </div>
                     </div>
