@@ -8,27 +8,27 @@ const ajv = new Ajv();
 addFormats(ajv);
 
 exports.showRegistrationForm = (req, res) => {
-  res.render('auth/register', {layout:'layout_admin.hbs'});
+  res.render('auth/register', { layout: 'layout_admin.hbs' });
 };
 
 exports.register = async (req, res) => {
   // syntax validation
   if (!ajv.validate(registerSchema, req.body)) {
-    res.render('auth/register', { error: 'Invalid input!',layout:'layout_admin.hbs' });
+    res.render('auth/register', { error: 'Invalid input!', layout: 'layout_admin.hbs' });
     return;
   }
-  const { 'full-name': fullName, email, password } = req.body;
+  const { 'full-name': fullName, email, password, tac } = req.body;
   try {
-    await authService.register(fullName, email, password);
+    await authService.register(fullName, email, password, tac);
   } catch (e) {
-    res.render('auth/register', { error: e.message, layout:'layout_admin.hbs'});
+    res.render('auth/register', { error: e.message, layout: 'layout_admin.hbs' });
     return;
   }
   res.redirect('/auth/login');
 };
 
 exports.showLoginForm = (req, res) => {
-  res.render('auth/login', {layout:'layout_admin.hbs'});
+  res.render('auth/login', { layout: 'layout_admin.hbs' });
 };
 
 exports.logout = (req, res) => {

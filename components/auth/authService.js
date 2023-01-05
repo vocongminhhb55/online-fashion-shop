@@ -2,7 +2,9 @@ const bcrypt = require('bcryptjs');
 
 const authRepository = require('./authRepository');
 
-exports.register = async (fullName, email, password) => {
+exports.register = async (fullName, email, password, tac) => {
+  if (tac != 'true')
+    throw new Error("You haven't agree to Terms and Conditions");
   if (await authRepository.emailExists(email))
     throw new Error('Email exists!');
   const salt = await bcrypt.genSalt(10);
